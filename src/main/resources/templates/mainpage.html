@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Get USD exchange rate</title>
+</head>
+<body>
+    <h1>USD price</h1>
+    <form action="/best">
+        <button type="submit" class="btn">
+            <i class="fas fa-plus"></i>
+        </button>
+    </form>
+    <table>
+        <tbody>
+            <tr>
+                <td>Bank</td>
+                <td>Date</td>
+                <td>Currency</td>
+                <td>Sell</td>
+                <td>Buy</td>
+            </tr>
+            <th:block th:each="record : ${records}">
+                <tr>
+                    <td th:text="${record.bank}"></td>
+                    <td th:text="${record.date}"></td>
+                    <td th:text="${record.currency}"></td>
+                    <td th:text="${record.sell}"></td>
+                    <td th:text="${record.buy}"></td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+</body>
+</html>
